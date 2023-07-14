@@ -63,33 +63,42 @@ const indexOfElement = (arr,element) =>{
   return arr.indexOf(element);
 }
 
-console.log(indexOfElement([1, 2, 3, 4, 5], 3));
+//console.log(indexOfElement([1, 2, 3, 4, 5], 3));
 
 // reverseArray(arr: any[]): any[]
 // Reverse the order of elements in the given array arr.
 // Example: reverseArray([1, 2, 3, 4, 5]) should return [5, 4, 3, 2, 1].
-// Implement the above functions using the provided array methods: spread operator, Array.from, iterating arrays (for loop or forEach), map, filter, find, findIndex, every, some, reduce, and other relevant array methods.
 
-// Feel free to add additional helper functions if needed.
+ const reverseArray = (arr) =>{
+  return arr.toReversed();
+ }
 
-// Note: The above examples are provided for clarification and testing purposes. You can create additional test cases to verify the correctness of your implementations.
-
-// Have fun coding! Let me know if you need any further assistance.
-
+ //console.log(reverseArray([1, 2, 3, 4, 5]))
 
 
-
-
-// User
-// I want more challenge like 15
-// ChatGPT
-// Sure! Here are 15 additional coding challenges that cover various topics related to arrays:
 
 // Challenge 1: Array Chunking
 // Write a function chunkArray(arr: any[], size: number): any[][] that takes an array arr and a chunk size size, and returns a new array with the original array split into chunks of the specified size.
 
 // Example:
 // chunkArray([1, 2, 3, 4, 5], 2) should return [[1, 2], [3, 4], [5]].
+
+const chunkArray = (arr,size) =>{
+  let arrayChunked = [];
+   let startIndex = 0;
+
+   while(startIndex < arr.length){
+    arrayChunked = [...arrayChunked, arr.slice(startIndex,size)]
+    startIndex = size;
+    size+=size; 
+   }
+   return arrayChunked;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5], 2));
+
+
+
 
 // Challenge 2: Array Intersection
 // Write a function intersection(arr1: any[], arr2: any[]): any[] that takes two arrays arr1 and arr2, and returns a new array containing the common elements between the two arrays.
